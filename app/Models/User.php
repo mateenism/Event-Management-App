@@ -17,10 +17,15 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    protected $primaryKey = 'user_id';  // tell Eloquent the PK column name
+    public $incrementing = true;        // since bigIncrements
+    protected $keyType = 'int';  
     protected $fillable = [
         'name',
         'email',
         'password',
+        'role',
+        'profile_image',
     ];
 
     /**
